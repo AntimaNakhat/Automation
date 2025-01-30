@@ -7,7 +7,7 @@ root=tk.Tk()
 root.title("Your AI Assistant")
 
 # Adding background color
-root.configure(bg='blue')
+root.configure(bg='sea green')
 
 # Function to automate YouTube search
 def search_youtube():
@@ -27,6 +27,12 @@ def search_instagram():
     url=f"https://www.instagram.com/{Username}/"
     webbrowser.open(url)
 
+# Function to automate LinkedIn
+def search_linkedin():
+    query = entry.get()
+    url=f"https://www.linkedin.com/search/results/people/?keywords={query}"
+    webbrowser.open(url)
+
 # Function to automate Twitter search
 def search_twitter_X():
     query = entry.get()
@@ -41,6 +47,8 @@ Button(root,text="Search on YouTube",command=search_youtube).pack(pady=5)
 Button(root,text="Search on google",command=search_google).pack(pady=5)
 Button(root,text="Search on Instagram",command=search_instagram).pack(pady=5)
 Button(root, text="Search on Twitter/X", command=search_twitter_X).pack(pady=5)
+Button(root, text="Search on LinkedIn", command=search_linkedin).pack(pady=5)
+
 
 # Run the GUI event
 root.mainloop()
